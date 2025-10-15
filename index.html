@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PintarMatika - Belajar Matematika SD, SMP, & SMA</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,9 +14,7 @@
     <header>
         <div class="container">
             <h1 class="logo">PintarMatika</h1>
-            <nav>
-                <a href="#pilih-jenjang">Mulai Belajar</a>
-            </nav>
+            <nav><a href="/">Beranda</a></nav>
         </div>
     </header>
 
@@ -34,31 +30,35 @@
             <div class="container">
                 <h3>Langsung Pilih Jenjangmu!</h3>
                 <div class="jenjang-container">
-                    
-                    <div class="jenjang-card">
+                    <div class="jenjang-card" data-jenjang="SD" role="button">
                         <img src="https://via.placeholder.com/80/8DECB4/000000?Text=SD" alt="Ikon SD">
                         <h4>Sekolah Dasar (SD)</h4>
                         <p>Materi kelas 1-6, mulai dari berhitung, pecahan, hingga bangun ruang.</p>
-                        <a href="#" class="btn" data-jenjang="SD">Lihat Materi SD</a>
+                        <a href="#" class="btn-jenjang" data-jenjang="SD">Lihat Materi SD</a>
                     </div>
-                    
-                    <div class="jenjang-card">
+                    <div class="jenjang-card" data-jenjang="SMP" role="button">
                         <img src="https://via.placeholder.com/80/FFD36E/000000?Text=SMP" alt="Ikon SMP">
                         <h4>Sekolah Menengah Pertama (SMP)</h4>
-                        <p>Materi kelas 7-9, mencakup aljabar, geometri, dan statistika dasar.</p>
-                        <a href="#" class="btn" data-jenjang="SMP">Lihat Materi SMP</a>
+                        <p>Materi kelas 7-9, mencakup aljar, geometri, dan statistika dasar.</p>
+                        <a href="#" class="btn-jenjang" data-jenjang="SMP">Lihat Materi SMP</a>
                     </div>
-
-                    <div class="jenjang-card">
+                    <div class="jenjang-card" data-jenjang="SMA" role="button">
                         <img src="https://via.placeholder.com/80/FF7676/000000?Text=SMA" alt="Ikon SMA">
                         <h4>Sekolah Menengah Atas (SMA)</h4>
                         <p>Materi kelas 10-12, dari fungsi, trigonometri, hingga kalkulus.</p>
-                        <a href="#" class="btn" data-jenjang="SMA">Lihat Materi SMA</a>
+                        <a href="#" class="btn-jenjang" data-jenjang="SMA">Lihat Materi SMA</a>
                     </div>
-
                 </div>
             </div>
         </section>
+
+        <section id="dynamic-content-area" class="container hidden">
+            <button id="back-button" class="btn-back hidden">&larr; Kembali</button>
+            <h2 id="content-title"></h2>
+            <div id="content-display" class="content-grid"></div>
+            <div id="materi-display" class="materi-view hidden"></div>
+        </section>
+
     </main>
 
     <footer>
@@ -69,4 +69,5 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+</html>                    
+                   
