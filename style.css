@@ -1,10 +1,119 @@
+/* --- Reset & Pengaturan Global --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header & Footer --- */
+header {
+    background-color: #fff;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #2a7de1;
+    font-weight: 700;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* --- Halaman Utama --- */
+.hero {
+    background: linear-gradient(to right, #4e8cff, #2a7de1);
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px 80px;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.jenjang-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.jenjang-section h3 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+
+.jenjang-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.jenjang-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.jenjang-card:hover {
+    transform: translateY(-10px);
+}
+
+.jenjang-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.btn-jenjang {
+    display: inline-block;
+    background-color: #2a7de1;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+}
 
 /* --- Penambahan untuk Konten Dinamis --- */
-
-/* Class untuk menyembunyikan elemen */
-.hidden {
-    display: none;
-}
+.hidden { display: none; }
 
 #dynamic-content-area {
     padding: 40px 20px;
@@ -17,11 +126,8 @@
 }
 
 #content-title {
-    font-size: 2.2rem;
-    font-weight: 700;
     text-align: center;
     margin-bottom: 40px;
-    color: #333;
 }
 
 .content-grid {
@@ -36,32 +142,16 @@
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.07);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-left: 5px solid #2a7de1;
 }
 
-.content-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
+.content-card:hover { transform: translateY(-8px); }
+.content-card h4 { color: #2a7de1; }
 
-.content-card h4 {
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-    color: #2a7de1;
-}
-
-.content-card p {
-    font-size: 0.95rem;
-    color: #666;
-}
-
-/* Tampilan untuk Materi */
 .materi-view {
     background: #fff;
     padding: 30px 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
     text-align: left;
 }
 
@@ -70,24 +160,10 @@
     padding-bottom: 20px;
     border-bottom: 1px solid #eee;
 }
-.materi-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
+.materi-item:last-child { border-bottom: none; }
+.materi-item h3 { color: #2a7de1; }
+.materi-item p { white-space: pre-wrap; line-height: 1.8; }
 
-.materi-item h3 {
-    font-size: 1.6rem;
-    color: #2a7de1;
-    margin-bottom: 15px;
-}
-
-.materi-item p {
-    white-space: pre-wrap; /* Agar baris baru (\n) dari backend ditampilkan */
-    line-height: 1.8;
-    color: #333;
-}
-
-/* Tombol Kembali */
 .btn-back {
     display: inline-block;
     background: #6c757d;
@@ -96,28 +172,9 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
     margin-bottom: 30px;
-    transition: background-color 0.3s ease;
 }
 
-.btn-back:hover {
-    background: #5a6268;
-}
-
-/* Ganti .btn menjadi .btn-jenjang untuk membedakan */
-.btn-jenjang {
-    display: inline-block;
-    background-color: #2a7de1;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-}
-
-.btn-jenjang:hover {
-    background-color: #2264b3;
+@media (max-width: 768px) {
+    .jenjang-container { grid-template-columns: 1fr; }
 }
